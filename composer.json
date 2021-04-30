@@ -10,7 +10,7 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "BILDjean.garcia",
+            "name": "SOSTheBlack",
             "email": "jean.garcia@bild.com.br",
             "role": "Developer"
         }
@@ -18,7 +18,8 @@
     "require": {
         "php": "^7.4|^8.0",
         "spatie/laravel-package-tools": "^1.4.3",
-        "illuminate/contracts": "^8.37"
+        "illuminate/contracts": "^8.37",
+        "league/flysystem-aws-s3-v3": "~1.0"
     },
     "require-dev": {
         "brianium/paratest": "^6.2",

@@ -4,7 +4,6 @@ namespace Bildvitta\IssImage;
 
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Bildvitta\IssImage\Commands\IssImageCommand;
 
 /**
  * Class IssImageServiceProvider.
@@ -23,11 +22,6 @@ class IssImageServiceProvider extends PackageServiceProvider
          *
          * More info: https://github.com/spatie/laravel-package-tools
          */
-        $package
-            ->name('iss-image')
-            ->hasConfigFile();
-//            ->hasViews()
-//            ->hasMigration('create_iss-image_table')
-//            ->hasCommand(IssImageCommand::class);
+        $package->name('iss-image')->hasConfigFile()->hasRoute('api');
     }
 }
