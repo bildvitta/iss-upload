@@ -1,5 +1,5 @@
 <?php
-// config for Bildvitta/ClassName
-return [
 
+return [
+    'AWS_ACCESS_KEY_ID' => env('AWS_ACCESS_KEY_ID'),
 ];

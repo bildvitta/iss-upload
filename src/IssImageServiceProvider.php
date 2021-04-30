@@ -6,8 +6,16 @@ use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 use Bildvitta\IssImage\Commands\IssImageCommand;
 
+/**
+ * Class IssImageServiceProvider.
+ *
+ * @package Bildvitta\IssImage
+ */
 class IssImageServiceProvider extends PackageServiceProvider
 {
+    /**
+     * @param  Package  $package
+     */
     public function configurePackage(Package $package): void
     {
         /*
@@ -17,9 +25,9 @@ class IssImageServiceProvider extends PackageServiceProvider
          */
         $package
             ->name('iss-image')
-            ->hasConfigFile()
-            ->hasViews()
-            ->hasMigration('create_iss-image_table')
-            ->hasCommand(IssImageCommand::class);
+            ->hasConfigFile();
+//            ->hasViews()
+//            ->hasMigration('create_iss-image_table')
+//            ->hasCommand(IssImageCommand::class);
     }
 }
