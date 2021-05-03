@@ -1,14 +1,14 @@
 <?php
 
-namespace Bildvitta\IssImage;
+namespace Bildvitta\IssUpload;
 
 use Illuminate\Support\Facades\Facade;
 use RuntimeException;
 
 /**
- * @see \Bildvitta\IssImage\IssImage
+ * @see \Bildvitta\IssUpload\IssUpload
  */
-class IssImageFacade extends Facade
+class IssUploadFacade extends Facade
 {
     /**
      * Get the registered name of the component.
@@ -19,6 +19,6 @@ class IssImageFacade extends Facade
      */
     protected static function getFacadeAccessor(): string
     {
-        return 'iss-image';
+        return 'iss-upload';
     }
 }

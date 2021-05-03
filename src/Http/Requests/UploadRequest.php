@@ -1,6 +1,6 @@
 <?php
 
-namespace Bildvitta\IssImage\Http\Requests;
+namespace Bildvitta\IssUpload\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 use League\MimeTypeDetection\ExtensionMimeTypeDetector;
@@ -46,7 +46,7 @@ class UploadRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'mine_ype' => 'in:' . config('iss-image.validation.mine_type'),
+            'mine_ype' => 'in:' . config('iss-upload.validation.mine_type'),
             'filename' => 'required',
             'entity' => 'required',
         ];

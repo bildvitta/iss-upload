@@ -1,12 +1,12 @@
 {
-    "name": "bildvitta/iss-image",
-    "description": "This is my package IssImage",
+    "name": "bildvitta/iss-upload",
+    "description": "This is my package IssUpload",
     "keywords": [
         "bildvitta",
         "laravel",
-        "iss-image"
+        "iss-upload"
     ],
-    "homepage": "https://github.com/bildvitta/iss-image",
+    "homepage": "https://github.com/bildvitta/iss-upload",
     "license": "MIT",
     "authors": [
         {
@@ -31,13 +31,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Bildvitta\\IssImage\\": "src",
-            "Bildvitta\\IssImage\\Database\\Factories\\": "database/factories"
+            "Bildvitta\\IssUpload\\": "src",
+            "Bildvitta\\IssUpload\\Database\\Factories\\": "database/factories"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Bildvitta\\IssImage\\Tests\\": "tests"
+            "Bildvitta\\IssUpload\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -51,10 +51,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Bildvitta\\IssImage\\IssImageServiceProvider"
+                "Bildvitta\\IssUpload\\IssUploadServiceProvider"
             ],
             "aliases": {
-                "IssImage": "Bildvitta\\IssImage\\IssImageFacade"
+                "IssUpload": "Bildvitta\\IssUpload\\IssUploadFacade"
             }
         }
     },

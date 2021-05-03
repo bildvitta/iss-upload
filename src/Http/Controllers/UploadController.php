@@ -1,18 +1,35 @@
 <?php
 
-namespace Bildvitta\IssImage\Http\Controllers;
+namespace Bildvitta\IssUpload\Http\Controllers;
 
-use Bildvitta\IssImage\Http\Requests\UploadRequest;
-use Bildvitta\IssImage\IssImage;
+use Bildvitta\IssUpload\Http\Requests\UploadRequest;
+use Bildvitta\IssUpload\IssUploadContract;
 use Illuminate\Http\JsonResponse;
 
 /**
  * Class UploadController.
  *
- * @package Bildvitta\IssImage\Http\Controllers
+ * @package Bildvitta\IssUpload\Http\Controllers
  */
 class UploadController extends Controller
 {
+    /**
+     * @var IssUploadContract
+     */
+    private IssUploadContract $issUpload;
+
+    /**
+     * UploadController constructor.
+     *
+     * @param  IssUploadContract  $issUpload
+     */
+    public function __construct(IssUploadContract $issUpload)
+    {
+        parent::__construct();
+
+        $this->issUpload = $issUpload;
+    }
+
     /**
      * Create a presigned address to store files into AWS S3.
      *
@@ -22,12 +39,6 @@ class UploadController extends Controller
      */
     public function __invoke(UploadRequest $uploadRequest): JsonResponse
     {
-        return new JsonResponse(
-            (new IssImage())
-                ->setEntity($uploadRequest->entity)
-                ->setFilename($uploadRequest->filename)
-                ->setMineType($uploadRequest->mine_type)
-                ->getUploadSource()
-        );
+        return $this->jsonResponse->setData($this->issUpload->getUploadSource());
     }
 }

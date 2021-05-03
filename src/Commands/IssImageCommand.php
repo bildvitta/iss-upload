@@ -1,13 +1,13 @@
 <?php
 
-namespace Bildvitta\IssImage\Commands;
+namespace Bildvitta\IssUpload\Commands;
 
 use Illuminate\Console\Command;
 
 /**
  * Class IssImageCommand.
  *
- * @package Bildvitta\IssImage\Commands
+ * @package Bildvitta\IssUpload\Commands
  */
 class IssImageCommand extends Command
 {
@@ -16,7 +16,7 @@ class IssImageCommand extends Command
      *
      * @var string
      */
-    public $signature = 'iss-image';
+    public $signature = 'iss-upload';
 
     /**
      * The console command description.

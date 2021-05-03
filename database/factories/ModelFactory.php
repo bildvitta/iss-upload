@@ -1,6 +1,6 @@
 <?php
 
-namespace Bildvitta\IssImage\Database\Factories;
+namespace Bildvitta\IssUpload\Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 

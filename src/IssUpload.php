@@ -1,20 +1,20 @@
 <?php
 
-namespace Bildvitta\IssImage;
+namespace Bildvitta\IssUpload;
 
 use Illuminate\Support\Facades\Storage;
 
 /**
- * Class IssImage.
+ * Class IssUpload.
  *
- * @package Bildvitta\IssImage
+ * @package Bildvitta\IssUpload
  */
-class IssImage implements IssImageContract
+class IssUpload implements IssUploadContract
 {
-    use IssImageTrait;
+    use IssUploadTrait;
 
     /**
-     * IssImage constructor.
+     * IssUpload constructor.
      *
      * @param  null|string  $entity
      * @param  null|string  $filename

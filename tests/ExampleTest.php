@@ -1,6 +1,6 @@
 <?php
 
-namespace Bildvitta\IssImage\Tests;
+namespace Bildvitta\IssUpload\Tests;
 
 class ExampleTest extends TestCase
 {

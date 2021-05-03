@@ -1,9 +1,9 @@
-# This is my package IssImage
+# This is my package IssUpload
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/bildvitta/iss-image.svg?style=flat-square)](https://packagist.org/packages/bildvitta/iss-image)
-[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/bildvitta/iss-image/run-tests?label=tests)](https://github.com/bildvitta/iss-image/actions?query=workflow%3Arun-tests+branch%3Amaster)
-[![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/bildvitta/iss-image/Check%20&%20fix%20styling?label=code%20style)](https://github.com/bildvitta/iss-image/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amaster)
-[![Total Downloads](https://img.shields.io/packagist/dt/bildvitta/iss-image.svg?style=flat-square)](https://packagist.org/packages/bildvitta/iss-image)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/bildvitta/iss-upload.svg?style=flat-square)](https://packagist.org/packages/bildvitta/iss-upload)
+[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/bildvitta/iss-upload/run-tests?label=tests)](https://github.com/bildvitta/iss-upload/actions?query=workflow%3Arun-tests+branch%3Amaster)
+[![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/bildvitta/iss-upload/Check%20&%20fix%20styling?label=code%20style)](https://github.com/bildvitta/iss-upload/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amaster)
+[![Total Downloads](https://img.shields.io/packagist/dt/bildvitta/iss-upload.svg?style=flat-square)](https://packagist.org/packages/bildvitta/iss-upload)
 
 This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
 
@@ -12,13 +12,13 @@ This is where your description should go. Limit it to a paragraph or two. Consid
 You can install the package via composer:
 
 ```bash
-composer require bildvitta/iss-image
+composer require bildvitta/iss-upload
 ```
 
 You can publish the config file with:
 
 ```bash
-php artisan vendor:publish --provider="Bildvitta\IssImage\IssImageServiceProvider" --tag="iss-image-config"
+php artisan vendor:publish --provider="Bildvitta\IssUpload\IssUploadServiceProvider" --tag="iss-upload-config"
 ```
 
 This is the contents of the published config file:
@@ -87,7 +87,7 @@ Here is an example of an answer.
 You may also want to have your own upload routes, one for each form for example
 
 ````php
-use Bildvitta\IssImage\Http\Controllers\UploadController;
+use Bildvitta\IssUpload\Http\Controllers\UploadController;
 
 Route::post('/upload-pdf')->name('upload_pdf')->uses(UploadController::class);
 ````
@@ -98,11 +98,11 @@ It may also happen that you want to have the upload source at any time in the re
 
 For any purpose you can use the code below which will have an array with the same content as the controller response
 
-Feel free to use `\Bildvitta\IssImage\Http\Requests\UploadRequest`.
+Feel free to use `\Bildvitta\IssUpload\Http\Requests\UploadRequest`.
 
 ```php
-use Bildvitta\IssImage\Http\Requests\UploadRequest;
-use Bildvitta\IssImage\IssImage;
+use Bildvitta\IssUpload\Http\Requests\UploadRequest;
+use Bildvitta\IssUpload\IssUpload;
 use Illuminate\Http\JsonResponse;
 use App\Http\Requests\YourRequestValidator;
 
@@ -112,9 +112,9 @@ class NewPostController extends Controller
     {
         #TODO: Your Logic.
         
-//        $issUpload = new IssImage($uploadRequest->entity, ($uploadRequest->filename, $uploadRequest->mine_type);
+//        $issUpload = new IssUpload($uploadRequest->entity, ($uploadRequest->filename, $uploadRequest->mine_type);
         
-        $issUpload = new IssImage();
+        $issUpload = new IssUpload();
         $issUpload->setEntity($uploadRequest->entity);
         $issUpload->setFilename($uploadRequest->filename);
         $issUpload->setMineType($uploadRequest->mine_type);

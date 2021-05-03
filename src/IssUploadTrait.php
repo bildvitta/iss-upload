@@ -1,13 +1,13 @@
 <?php
 
-namespace Bildvitta\IssImage;
+namespace Bildvitta\IssUpload;
 
 /**
- * Trait IssImageTrait.
+ * Trait IssUploadTrait.
  *
- * @package Bildvitta\IssImage
+ * @package Bildvitta\IssUpload
  */
-trait IssImageTrait
+trait IssUploadTrait
 {
     /**
      * @var string|null
@@ -27,9 +27,9 @@ trait IssImageTrait
     /**
      * @param  string|null  $entity
      *
-     * @return IssImageContract
+     * @return IssUploadContract
      */
-    public function setEntity(?string $entity): IssImageContract
+    public function setEntity(?string $entity): IssUploadContract
     {
         $this->entity = $entity;
 
@@ -39,9 +39,9 @@ trait IssImageTrait
     /**
      * @param  string|null  $filename
      *
-     * @return IssImageContract
+     * @return IssUploadContract
      */
-    public function setFilename(?string $filename): IssImageContract
+    public function setFilename(?string $filename): IssUploadContract
     {
         $this->filename = $filename;
 
@@ -51,9 +51,9 @@ trait IssImageTrait
     /**
      * @param  string|null  $mineType
      *
-     * @return IssImageContract
+     * @return IssUploadContract
      */
-    public function setMineType(?string $mineType): IssImageContract
+    public function setMineType(?string $mineType): IssUploadContract
     {
         $this->mineType = $mineType;
 

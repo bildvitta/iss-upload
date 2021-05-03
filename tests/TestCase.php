@@ -1,10 +1,10 @@
 <?php
 
-namespace Bildvitta\IssImage\Tests;
+namespace Bildvitta\IssUpload\Tests;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use Bildvitta\IssImage\IssImageServiceProvider;
+use Bildvitta\IssUpload\IssUploadServiceProvider;
 
 class TestCase extends Orchestra
 {
@@ -13,14 +13,14 @@ class TestCase extends Orchestra
         parent::setUp();
 
         Factory::guessFactoryNamesUsing(
-            fn (string $modelName) => 'Spatie\\IssImage\\Database\\Factories\\'.class_basename($modelName).'Factory'
+            fn (string $modelName) => 'Spatie\\IssUpload\\Database\\Factories\\'.class_basename($modelName).'Factory'
         );
     }
 
     protected function getPackageProviders($app)
     {
         return [
-            IssImageServiceProvider::class,
+            IssUploadServiceProvider::class,
         ];
     }
 
