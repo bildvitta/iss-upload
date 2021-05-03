@@ -2,9 +2,9 @@
 
 namespace Bildvitta\IssUpload\Tests;
 
+use Bildvitta\IssUpload\IssUploadServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use Bildvitta\IssUpload\IssUploadServiceProvider;
 
 class TestCase extends Orchestra
 {
