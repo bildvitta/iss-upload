@@ -59,7 +59,7 @@ It is mandatory to fill in AWS credential information.
 
 ## Usage
 
-The package already contains a 'prefix / upload-credentials' and 'prefix / upload' route by default.
+The package already contains a `{prefix}/upload-credentials` and `{prefix}/upload` route by default.
 
 Below is an example in cURL requesting the upload link to AWS.
 
