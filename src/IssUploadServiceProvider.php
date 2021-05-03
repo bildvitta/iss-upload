@@ -19,7 +19,7 @@ class IssUploadServiceProvider extends PackageServiceProvider
     public function packageRegistered(): void
     {
         $uploadRequest = new UploadRequest(request()->all());
-        $this->app->singleton(IssUploadContract::class, fn() => new IssUpload($uploadRequest->entity, $uploadRequest->filename, $uploadRequest->mine_type));
+        $this->app->singleton(IssUploadContract::class, fn () => new IssUpload($uploadRequest->entity, $uploadRequest->filename, $uploadRequest->mine_type));
     }
 
     /**

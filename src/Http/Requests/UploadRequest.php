@@ -2,10 +2,10 @@
 
 namespace Bildvitta\IssUpload\Http\Requests;
 
-use Illuminate\Foundation\Http\FormRequest;
-use League\MimeTypeDetection\ExtensionMimeTypeDetector;
-
 use function config;
+use Illuminate\Foundation\Http\FormRequest;
+
+use League\MimeTypeDetection\ExtensionMimeTypeDetector;
 
 /**
  * Class UploadRequest
