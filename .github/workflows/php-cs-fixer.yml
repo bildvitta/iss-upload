@@ -1,23 +1,32 @@
-name: Check & fix styling
+name: PHP Tests
 
-on: [push]
+on:
+  push:
+    branches:
+      - "feature/*"
 
 jobs:
-  php-cs-fixer:
+  build:
     runs-on: ubuntu-latest
-
+    
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-        with:
-          ref: ${{ github.head_ref }}
+      - uses: actions/checkout@v2
 
-      - name: Run PHP CS Fixer
-        uses: docker://oskarstark/php-cs-fixer-ga
-        with:
-          args: --config=.php_cs.dist --allow-risky=yes
+      - name: Validate composer.json and composer.lock
+        run: composer validate --strict
 
-      - name: Commit changes
-        uses: stefanzweifel/git-auto-commit-action@v4
+      - name: Cache Composer packages
+        id: composer-cache
+        uses: actions/cache@v2
         with:
-          commit_message: Fix styling
+          path: vendor
+          key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-php-
+
+      - name: Install dependencies
+        run: composer install --prefer-dist --no-progress --no-suggest
+
+      - name: Check Style Guide
+        run: composer check-style
+
