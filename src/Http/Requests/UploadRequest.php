@@ -4,7 +4,6 @@ namespace Bildvitta\IssUpload\Http\Requests;
 
 use function config;
 use Illuminate\Foundation\Http\FormRequest;
-
 use League\MimeTypeDetection\ExtensionMimeTypeDetector;
 
 /**
