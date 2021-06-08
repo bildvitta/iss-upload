@@ -39,6 +39,7 @@ class IssUpload implements IssUploadContract
         $key = sprintf('uploads/%s/%s', $this->entity, $this->filename);
 
         $cmd = $client->getCommand('PutObject', [
+            'ACL' => 'public-read',
             'Bucket' => $bucket,
             'Key' => $key,
             'ContentType' => $this->mineType,
@@ -47,7 +48,7 @@ class IssUpload implements IssUploadContract
         $response = (string)$client->createPresignedRequest($cmd, '+10 minutes')->getUri();
 
         $full_path = parse_url($response);
-        $full_path = sprintf('%s://%s/%s/%s', $full_path['scheme'], $full_path['host'], env('AWS_BUCKET'), $key);
+        $full_path = sprintf('%s://%s/%s', $full_path['scheme'], $full_path['host'], $key);
 
         return [
             'path' => $key,
