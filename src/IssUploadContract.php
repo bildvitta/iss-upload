@@ -29,9 +29,9 @@ interface IssUploadContract
     public function setFilename(?string $filename): IssUploadContract;
 
     /**
-     * @param  string|null  $mineType
+     * @param  string|null  $mimeType
      *
      * @return IssUploadContract
      */
-    public function setMineType(?string $mineType): IssUploadContract;
+    public function setMimeType(?string $mimeType): IssUploadContract;
 }

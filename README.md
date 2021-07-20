@@ -27,7 +27,7 @@ This is the contents of the published config file:
 return [
 
     'validation' => [
-        'mine_type' => env('ISS_IMAGE_VALID_MINE_TYPE', 'image/jpeg,image/gif,image/bmp,image/tiff,image/png,application/pdf'),
+        'mime_type' => env('ISS_IMAGE_VALID_MIME_TYPE', 'image/jpeg,image/gif,image/bmp,image/tiff,image/png,application/pdf'),
     ],
 
     'route' => [
@@ -47,7 +47,7 @@ If you want to change any settings, do so through your .env file.
 ```dotenv
 ISS_IMAGE_ROUTE_PREFIX=api
 ISS_IMAGE_ROUTE_MIDDLEWARE="hub.auth"
-ISS_IMAGE_VALID_MINE_TYPE="image/jpeg,image/gif,image/bmp,image/tiff,image/png,application/pdf"
+ISS_IMAGE_VALID_MIME_TYPE="image/jpeg,image/gif,image/bmp,image/tiff,image/png,application/pdf"
 
 AWS_ACCESS_KEY_ID=
 AWS_SECRET_ACCESS_KEY=
@@ -112,12 +112,12 @@ class NewPostController extends Controller
     {
         #TODO: Your Logic.
         
-//        $issUpload = new IssUpload($uploadRequest->entity, ($uploadRequest->filename, $uploadRequest->mine_type);
+//        $issUpload = new IssUpload($uploadRequest->entity, ($uploadRequest->filename, $uploadRequest->mime_type);
         
         $issUpload = new IssUpload();
         $issUpload->setEntity($uploadRequest->entity);
         $issUpload->setFilename($uploadRequest->filename);
-        $issUpload->setMineType($uploadRequest->mine_type);
+        $issUpload->setMimeType($uploadRequest->mime_type);
 
         dd($issUpload->getUploadSource());
         
