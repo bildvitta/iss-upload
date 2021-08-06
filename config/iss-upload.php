@@ -2,7 +2,7 @@
 
 return [
     'validation' => [
-        'mine_type' => env('ISS_IMAGE_VALID_MINE_TYPE', 'image/jpeg,image/gif,image/bmp,image/tiff,image/png,application/pdf'),
+        'mime_type' => env('ISS_IMAGE_VALID_MIME_TYPE', 'image/jpeg,image/gif,image/bmp,image/tiff,image/png,application/pdf'),
     ],
 
     'route' => [

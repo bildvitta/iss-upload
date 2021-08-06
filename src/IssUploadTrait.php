@@ -22,7 +22,7 @@ trait IssUploadTrait
     /**
      * @var string|null
      */
-    protected ?string $mineType;
+    protected ?string $mimeType;
 
     /**
      * @param  string|null  $entity
@@ -49,13 +49,13 @@ trait IssUploadTrait
     }
 
     /**
-     * @param  string|null  $mineType
+     * @param  string|null  $mimeType
      *
      * @return IssUploadContract
      */
-    public function setMineType(?string $mineType): IssUploadContract
+    public function setMimeType(?string $mimeType): IssUploadContract
     {
-        $this->mineType = $mineType;
+        $this->mimeType = $mimeType;
 
         return $this;
     }

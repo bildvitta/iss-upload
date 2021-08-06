@@ -18,13 +18,13 @@ class IssUpload implements IssUploadContract
      *
      * @param  null|string  $entity
      * @param  null|string  $filename
-     * @param  string|null  $mineType
+     * @param  string|null  $mimeType
      */
-    public function __construct(?string $entity = null, ?string $filename = null, ?string $mineType = null)
+    public function __construct(?string $entity = null, ?string $filename = null, ?string $mimeType = null)
     {
         $this->entity = $entity;
         $this->filename = $filename;
-        $this->mineType = $mineType;
+        $this->mimeType = $mimeType;
     }
 
     /**
@@ -42,7 +42,7 @@ class IssUpload implements IssUploadContract
             'ACL' => 'public-read',
             'Bucket' => $bucket,
             'Key' => $key,
-            'ContentType' => $this->mineType,
+            'ContentType' => $this->mimeType,
         ]);
 
         $response = (string)$client->createPresignedRequest($cmd, '+10 minutes')->getUri();

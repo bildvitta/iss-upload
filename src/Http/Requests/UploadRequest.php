@@ -11,7 +11,7 @@ use League\MimeTypeDetection\ExtensionMimeTypeDetector;
  *
  * @property-read string entity
  * @property-read string filename
- * @property-read string mine_type
+ * @property-read string mime_type
  */
 class UploadRequest extends FormRequest
 {
@@ -33,7 +33,7 @@ class UploadRequest extends FormRequest
     public function prepareForValidation(): void
     {
         $this->merge([
-            'mine_ype' => (new ExtensionMimeTypeDetector)->detectMimeTypeFromPath((string)$this->filename),
+            'mime_type' => (new ExtensionMimeTypeDetector)->detectMimeTypeFromPath((string)$this->filename),
         ]);
     }
 
@@ -45,7 +45,7 @@ class UploadRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'mine_ype' => 'in:' . config('iss-upload.validation.mine_type'),
+            'mime_type' => 'in:' . config('iss-upload.validation.mime_type'),
             'filename' => 'required',
             'entity' => 'required',
         ];
